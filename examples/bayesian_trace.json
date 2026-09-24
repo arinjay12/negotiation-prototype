@@ -1,0 +1,2994 @@
+{
+  "status": "agreement",
+  "agreement": {
+    "handler": "specialist",
+    "timing": "immediate",
+    "cost_responsibility": "management",
+    "employment_protection": "written",
+    "work_pay_protection": "full",
+    "documentation": "full"
+  },
+  "utilities": {
+    "alice": 0.975,
+    "bob": 0.965,
+    "carl": 0.72
+  },
+  "nash_surplus": 0.023253749999999997,
+  "deadlock": null,
+  "traces": [
+    {
+      "turn": 1,
+      "agent": "alice",
+      "observed_events": [],
+      "current_offer": null,
+      "own_utility": null,
+      "opponent_beliefs_before": {
+        "bob": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16609136942426522,
+            "timing": 0.16862842270257425,
+            "cost_responsibility": 0.16703320387095255,
+            "employment_protection": 0.16717187658475643,
+            "work_pay_protection": 0.16354984683457105,
+            "documentation": 0.16752528058287988
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01991721670317012,
+            "timing": 0.020001378331750676,
+            "cost_responsibility": 0.019898940714410736,
+            "employment_protection": 0.0195550153773552,
+            "work_pay_protection": 0.018825336332183938,
+            "documentation": 0.02095312594016088
+          }
+        },
+        "carl": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16489674060106152,
+            "timing": 0.16741169083074334,
+            "cost_responsibility": 0.17084307166514823,
+            "employment_protection": 0.1637875743512288,
+            "work_pay_protection": 0.16170356471329797,
+            "documentation": 0.17135735783852066
+          },
+          "posterior_weight_variance": {
+            "handler": 0.019216511653656627,
+            "timing": 0.020675595164905403,
+            "cost_responsibility": 0.020996295753900066,
+            "employment_protection": 0.018462175993349324,
+            "work_pay_protection": 0.018913477297475202,
+            "documentation": 0.020248874182492292
+          }
+        }
+      },
+      "evidence": [],
+      "posterior_update": [],
+      "opponent_beliefs_after": {
+        "bob": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16609136942426522,
+            "timing": 0.16862842270257425,
+            "cost_responsibility": 0.16703320387095255,
+            "employment_protection": 0.16717187658475643,
+            "work_pay_protection": 0.16354984683457105,
+            "documentation": 0.16752528058287988
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01991721670317012,
+            "timing": 0.020001378331750676,
+            "cost_responsibility": 0.019898940714410736,
+            "employment_protection": 0.0195550153773552,
+            "work_pay_protection": 0.018825336332183938,
+            "documentation": 0.02095312594016088
+          }
+        },
+        "carl": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16489674060106152,
+            "timing": 0.16741169083074334,
+            "cost_responsibility": 0.17084307166514823,
+            "employment_protection": 0.1637875743512288,
+            "work_pay_protection": 0.16170356471329797,
+            "documentation": 0.17135735783852066
+          },
+          "posterior_weight_variance": {
+            "handler": 0.019216511653656627,
+            "timing": 0.020675595164905403,
+            "cost_responsibility": 0.020996295753900066,
+            "employment_protection": 0.018462175993349324,
+            "work_pay_protection": 0.018913477297475202,
+            "documentation": 0.020248874182492292
+          }
+        }
+      },
+      "candidate_offer_count": 94,
+      "candidate_offers_considered": [
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "written",
+          "work_pay_protection": "none",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "immediate",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "split",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "split",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "72h",
+          "cost_responsibility": "management",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "full"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "carl",
+          "employment_protection": "verbal",
+          "work_pay_protection": "partial",
+          "documentation": "basic"
+        },
+        {
+          "handler": "specialist",
+          "timing": "24h",
+          "cost_responsibility": "management",
+          "employment_protection": "none",
+          "work_pay_protection": "full",
+          "documentation": "basic"
+        }
+      ],
+      "candidate_scores": [
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.975,
+          "own_surplus": 0.32499999999999996,
+          "opponent_acceptance": {
+            "bob": 0.8728557767077423,
+            "carl": 0.6691484643226184
+          },
+          "score": 0.1898227833317114
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.99,
+          "own_surplus": 0.33999999999999997,
+          "opponent_acceptance": {
+            "bob": 0.9076241327138284,
+            "carl": 0.5798480289648134
+          },
+          "score": 0.1789365818943039
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.981,
+          "own_surplus": 0.33099999999999996,
+          "opponent_acceptance": {
+            "bob": 0.9212228961510944,
+            "carl": 0.5776163883721994
+          },
+          "score": 0.1761295493551496
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.95,
+          "own_surplus": 0.29999999999999993,
+          "opponent_acceptance": {
+            "bob": 0.7854431274773123,
+            "carl": 0.689831572149155
+          },
+          "score": 0.162547040238427
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.941,
+          "own_surplus": 0.2909999999999999,
+          "opponent_acceptance": {
+            "bob": 0.7992153286588757,
+            "carl": 0.6873578975672906
+          },
+          "score": 0.15985996769106012
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.9349999999999999,
+          "own_surplus": 0.2849999999999999,
+          "opponent_acceptance": {
+            "bob": 0.7269219522471815,
+            "carl": 0.7625647076205577
+          },
+          "score": 0.157982632403826
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.956,
+          "own_surplus": 0.30599999999999994,
+          "opponent_acceptance": {
+            "bob": 0.8480194864276609,
+            "carl": 0.5976393946215901
+          },
+          "score": 0.1550838148637573
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.996,
+          "own_surplus": 0.346,
+          "opponent_acceptance": {
+            "bob": 0.9462989200241343,
+            "carl": 0.47188708728456985
+          },
+          "score": 0.15450499941047008
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.89,
+          "own_surplus": 0.24,
+          "opponent_acceptance": {
+            "bob": 0.7893109216433047,
+            "carl": 0.7649130640187058
+          },
+          "score": 0.14490101652902612
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.896,
+          "own_surplus": 0.246,
+          "opponent_acceptance": {
+            "bob": 0.8517026447217264,
+            "carl": 0.6778831402862362
+          },
+          "score": 0.1420292963949379
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.881,
+          "own_surplus": 0.23099999999999998,
+          "opponent_acceptance": {
+            "bob": 0.804315150737777,
+            "carl": 0.76300801369248
+          },
+          "score": 0.14176444718140294
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.875,
+          "own_surplus": 0.22499999999999998,
+          "opponent_acceptance": {
+            "bob": 0.7322456268583624,
+            "carl": 0.8300783011029798
+          },
+          "score": 0.13675977133485206
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.856,
+          "own_surplus": 0.20599999999999996,
+          "opponent_acceptance": {
+            "bob": 0.69597832144467,
+            "carl": 0.7899512532733337
+          },
+          "score": 0.11325652313891534
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.945,
+          "own_surplus": 0.29499999999999993,
+          "opponent_acceptance": {
+            "bob": 0.8715870060456499,
+            "carl": 0.43372751803144594
+          },
+          "score": 0.11151922431978836
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.85,
+          "own_surplus": 0.19999999999999996,
+          "opponent_acceptance": {
+            "bob": 0.6160666262824601,
+            "carl": 0.8533949791493236
+          },
+          "score": 0.10514963313818282
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.985,
+          "own_surplus": 0.33499999999999996,
+          "opponent_acceptance": {
+            "bob": 0.9583842345862428,
+            "carl": 0.3244540765482039
+          },
+          "score": 0.10416881005669726
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.841,
+          "own_surplus": 0.19099999999999995,
+          "opponent_acceptance": {
+            "bob": 0.6243601132858285,
+            "carl": 0.8516345328005065
+          },
+          "score": 0.1015597869750925
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.885,
+          "own_surplus": 0.235,
+          "opponent_acceptance": {
+            "bob": 0.8772429362117247,
+            "carl": 0.4900832176786473
+          },
+          "score": 0.101031679603159
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.97,
+          "own_surplus": 0.31999999999999995,
+          "opponent_acceptance": {
+            "bob": 0.7854861132054232,
+            "carl": 0.38832418035837685
+          },
+          "score": 0.0976074403498826
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.96,
+          "own_surplus": 0.30999999999999994,
+          "opponent_acceptance": {
+            "bob": 0.9060388374170267,
+            "carl": 0.3273487507511369
+          },
+          "score": 0.09194311128374759
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.835,
+          "own_surplus": 0.18499999999999994,
+          "opponent_acceptance": {
+            "bob": 0.5388296669122095,
+            "carl": 0.898411092206665
+          },
+          "score": 0.08955675166933103
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.845,
+          "own_surplus": 0.19499999999999995,
+          "opponent_acceptance": {
+            "bob": 0.7330830706060736,
+            "carl": 0.6076043329119428
+          },
+          "score": 0.08685776776650518
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.9299999999999999,
+          "own_surplus": 0.2799999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6109280182225001,
+            "carl": 0.5064616177866221
+          },
+          "score": 0.08663524588883983
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.9,
+          "own_surplus": 0.25,
+          "opponent_acceptance": {
+            "bob": 0.9103527419867994,
+            "carl": 0.37570948257780123
+          },
+          "score": 0.08550703941378575
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.86,
+          "own_surplus": 0.20999999999999996,
+          "opponent_acceptance": {
+            "bob": 0.7900321624226017,
+            "carl": 0.5063672209172259
+          },
+          "score": 0.08400974200944342
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7959999999999999,
+          "own_surplus": 0.1459999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6874452075562809,
+            "carl": 0.8184222667867351
+          },
+          "score": 0.08214258789874375
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.9359999999999999,
+          "own_surplus": 0.2859999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6909400588483148,
+            "carl": 0.3953452600519724
+          },
+          "score": 0.07812372489227365
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.87,
+          "own_surplus": 0.21999999999999997,
+          "opponent_acceptance": {
+            "bob": 0.6169391636485763,
+            "carl": 0.5720173618366686
+          },
+          "score": 0.07763798081687545
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7899999999999999,
+          "own_surplus": 0.1399999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6213702252810002,
+            "carl": 0.8727122233151128
+          },
+          "score": 0.07591883471295113
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.976,
+          "own_surplus": 0.32599999999999996,
+          "opponent_acceptance": {
+            "bob": 0.8479570346919252,
+            "carl": 0.2726936185310743
+          },
+          "score": 0.07538178592058077
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 1.0,
+          "own_surplus": 0.35,
+          "opponent_acceptance": {
+            "bob": 0.9734030064231366,
+            "carl": 0.21740720441937256
+          },
+          "score": 0.07406868923995333
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.876,
+          "own_surplus": 0.22599999999999998,
+          "opponent_acceptance": {
+            "bob": 0.6971135652527989,
+            "carl": 0.4554288010678773
+          },
+          "score": 0.07175174452225926
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7809999999999999,
+          "own_surplus": 0.1309999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6280233129272746,
+            "carl": 0.8716339299624776
+          },
+          "score": 0.07171024211448597
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7999999999999999,
+          "own_surplus": 0.1499999999999999,
+          "opponent_acceptance": {
+            "bob": 0.7665424537149039,
+            "carl": 0.5625887033150814
+          },
+          "score": 0.06468721876071425
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.786,
+          "own_surplus": 0.136,
+          "opponent_acceptance": {
+            "bob": 0.7482518156193068,
+            "carl": 0.6263889791383732
+          },
+          "score": 0.06374274996569282
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7749999999999999,
+          "own_surplus": 0.12499999999999989,
+          "opponent_acceptance": {
+            "bob": 0.5566995220870075,
+            "carl": 0.9116416218520291
+          },
+          "score": 0.06343880689995607
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7849999999999999,
+          "own_surplus": 0.1349999999999999,
+          "opponent_acceptance": {
+            "bob": 0.7181791016202749,
+            "carl": 0.6535689039606617
+          },
+          "score": 0.06336623631961108
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.78,
+          "own_surplus": 0.13,
+          "opponent_acceptance": {
+            "bob": 0.6796322061005484,
+            "carl": 0.712093948446385
+          },
+          "score": 0.06291505754735069
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.771,
+          "own_surplus": 0.121,
+          "opponent_acceptance": {
+            "bob": 0.6896722853313418,
+            "carl": 0.710969367238721
+          },
+          "score": 0.05933064006479691
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.765,
+          "own_surplus": 0.11499999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6148075400826033,
+            "carl": 0.7802195796423339
+          },
+          "score": 0.0551637612556814
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.836,
+          "own_surplus": 0.18599999999999994,
+          "opponent_acceptance": {
+            "bob": 0.496104012348925,
+            "carl": 0.5922243904194749
+          },
+          "score": 0.05464771071142757
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.83,
+          "own_surplus": 0.17999999999999994,
+          "opponent_acceptance": {
+            "bob": 0.41360553961741425,
+            "carl": 0.6907814787354462
+          },
+          "score": 0.05142798832861611
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.756,
+          "own_surplus": 0.10599999999999998,
+          "opponent_acceptance": {
+            "bob": 0.5183121895566566,
+            "carl": 0.8914256546723913
+          },
+          "score": 0.048975898987423654
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.76,
+          "own_surplus": 0.10999999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6184348095059928,
+            "carl": 0.6724060735748357
+          },
+          "score": 0.04574232542241187
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.775,
+          "own_surplus": 0.125,
+          "opponent_acceptance": {
+            "bob": 0.7777152107939806,
+            "carl": 0.46419008087688496
+          },
+          "score": 0.045125960824705186
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.776,
+          "own_surplus": 0.126,
+          "opponent_acceptance": {
+            "bob": 0.5188459042014191,
+            "carl": 0.6431289061971919
+          },
+          "score": 0.042044284655597904
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.75,
+          "own_surplus": 0.09999999999999998,
+          "opponent_acceptance": {
+            "bob": 0.44739073861075934,
+            "carl": 0.9274888715522543
+          },
+          "score": 0.04149499312970227
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.79,
+          "own_surplus": 0.14,
+          "opponent_acceptance": {
+            "bob": 0.8234477457150381,
+            "carl": 0.35951413510456415
+          },
+          "score": 0.0414457545746363
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.746,
+          "own_surplus": 0.09599999999999997,
+          "opponent_acceptance": {
+            "bob": 0.5770934341324484,
+            "carl": 0.7327695904283589
+          },
+          "score": 0.040596145859340405
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.745,
+          "own_surplus": 0.09499999999999997,
+          "opponent_acceptance": {
+            "bob": 0.5536085503135298,
+            "carl": 0.746524993284972
+          },
+          "score": 0.03926184883400453
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.77,
+          "own_surplus": 0.12,
+          "opponent_acceptance": {
+            "bob": 0.4472591363159528,
+            "carl": 0.729398008295782
+          },
+          "score": 0.03914759078651372
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.94,
+          "own_surplus": 0.2899999999999999,
+          "opponent_acceptance": {
+            "bob": 0.7846707969902349,
+            "carl": 0.16726275979329136
+          },
+          "score": 0.03806139887979855
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.741,
+          "own_surplus": 0.09099999999999997,
+          "opponent_acceptance": {
+            "bob": 0.4456960529605204,
+            "carl": 0.9264495750155411
+          },
+          "score": 0.03757525761547541
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.74,
+          "own_surplus": 0.08999999999999997,
+          "opponent_acceptance": {
+            "bob": 0.49943038090140324,
+            "carl": 0.8000566455740272
+          },
+          "score": 0.035961533571756174
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.84,
+          "own_surplus": 0.18999999999999995,
+          "opponent_acceptance": {
+            "bob": 0.6175478927256297,
+            "carl": 0.30433245579983653
+          },
+          "score": 0.03570857468576892
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.88,
+          "own_surplus": 0.22999999999999998,
+          "opponent_acceptance": {
+            "bob": 0.7918509285873281,
+            "carl": 0.1885594362837501
+          },
+          "score": 0.034341521884493846
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.731,
+          "own_surplus": 0.08099999999999996,
+          "opponent_acceptance": {
+            "bob": 0.5020985909523235,
+            "carl": 0.7987935583042008
+          },
+          "score": 0.03248692272699287
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.75,
+          "own_surplus": 0.09999999999999998,
+          "opponent_acceptance": {
+            "bob": 0.6802582557216232,
+            "carl": 0.47534997813225804
+          },
+          "score": 0.03233607469815615
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.735,
+          "own_surplus": 0.08499999999999996,
+          "opponent_acceptance": {
+            "bob": 0.37443220270281474,
+            "carl": 0.9519273430809835
+          },
+          "score": 0.030296741410042294
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "full"
+          },
+          "own_utility": 0.7799999999999999,
+          "own_surplus": 0.1299999999999999,
+          "opponent_acceptance": {
+            "bob": 0.6205225336636508,
+            "carl": 0.3711653085878206
+          },
+          "score": 0.029941136900085458
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.735,
+          "own_surplus": 0.08499999999999996,
+          "opponent_acceptance": {
+            "bob": 0.6149250334550878,
+            "carl": 0.5711438704180483
+          },
+          "score": 0.02985290640808135
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.76,
+          "own_surplus": 0.10999999999999999,
+          "opponent_acceptance": {
+            "bob": 0.5010708913031878,
+            "carl": 0.5337745104018178
+          },
+          "score": 0.029420475665015766
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.766,
+          "own_surplus": 0.11599999999999999,
+          "opponent_acceptance": {
+            "bob": 0.5774022607568492,
+            "carl": 0.42768669630363193
+          },
+          "score": 0.028645882779596024
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.725,
+          "own_surplus": 0.07499999999999996,
+          "opponent_acceptance": {
+            "bob": 0.4234319881723807,
+            "carl": 0.8513007099783014
+          },
+          "score": 0.027035096411900342
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.98,
+          "own_surplus": 0.32999999999999996,
+          "opponent_acceptance": {
+            "bob": 0.9065893929712845,
+            "carl": 0.08707077121023624
+          },
+          "score": 0.026049354413619785
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.736,
+          "own_surplus": 0.08599999999999997,
+          "opponent_acceptance": {
+            "bob": 0.33534877997872786,
+            "carl": 0.749955158552875
+          },
+          "score": 0.021628703081513555
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.696,
+          "own_surplus": 0.04599999999999993,
+          "opponent_acceptance": {
+            "bob": 0.6815855499038013,
+            "carl": 0.6832485427437667
+          },
+          "score": 0.0214218473514411
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.74,
+          "own_surplus": 0.08999999999999997,
+          "opponent_acceptance": {
+            "bob": 0.443745747522833,
+            "carl": 0.4886249316355269
+          },
+          "score": 0.019514271199220997
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.69,
+          "own_surplus": 0.039999999999999925,
+          "opponent_acceptance": {
+            "bob": 0.6133832272830969,
+            "carl": 0.7579019215012888
+          },
+          "score": 0.0185953730629808
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "written",
+            "work_pay_protection": "none",
+            "documentation": "basic"
+          },
+          "own_utility": 0.73,
+          "own_surplus": 0.07999999999999996,
+          "opponent_acceptance": {
+            "bob": 0.2724578056357407,
+            "carl": 0.8167677398694349
+          },
+          "score": 0.017802779689511165
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6859999999999999,
+          "own_surplus": 0.03599999999999992,
+          "opponent_acceptance": {
+            "bob": 0.5815568383224664,
+            "carl": 0.8097046309903797
+          },
+          "score": 0.01695201354625765
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.7,
+          "own_surplus": 0.04999999999999993,
+          "opponent_acceptance": {
+            "bob": 0.7625848943818685,
+            "carl": 0.42994408768839876
+          },
+          "score": 0.016393443334998297
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.726,
+          "own_surplus": 0.07599999999999996,
+          "opponent_acceptance": {
+            "bob": 0.3847713915507565,
+            "carl": 0.5499752179973421
+          },
+          "score": 0.016082719475992355
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.77,
+          "own_surplus": 0.12,
+          "opponent_acceptance": {
+            "bob": 0.6801442044906654,
+            "carl": 0.19336927321942574
+          },
+          "score": 0.01578227886081173
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.69,
+          "own_surplus": 0.039999999999999925,
+          "opponent_acceptance": {
+            "bob": 0.6842581436868904,
+            "carl": 0.5385473790855555
+          },
+          "score": 0.014740217196020863
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.6809999999999999,
+          "own_surplus": 0.030999999999999917,
+          "opponent_acceptance": {
+            "bob": 0.6211616403755268,
+            "carl": 0.7567378865477694
+          },
+          "score": 0.014571752955211934
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.72,
+          "own_surplus": 0.06999999999999995,
+          "opponent_acceptance": {
+            "bob": 0.31405301221114396,
+            "carl": 0.6435885884951424
+          },
+          "score": 0.01414846543891324
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.6849999999999999,
+          "own_surplus": 0.03499999999999992,
+          "opponent_acceptance": {
+            "bob": 0.7129371239045377,
+            "carl": 0.5271720710415194
+          },
+          "score": 0.013154418904589852
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6799999999999999,
+          "own_surplus": 0.029999999999999916,
+          "opponent_acceptance": {
+            "bob": 0.5050951974608826,
+            "carl": 0.866862303848402
+          },
+          "score": 0.01313543959601109
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.73,
+          "own_surplus": 0.07999999999999996,
+          "opponent_acceptance": {
+            "bob": 0.5003599095396122,
+            "carl": 0.29506856649760965
+          },
+          "score": 0.011811238499258156
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.6749999999999999,
+          "own_surplus": 0.02499999999999991,
+          "opponent_acceptance": {
+            "bob": 0.5486556557111413,
+            "carl": 0.8163275730137496
+          },
+          "score": 0.011197068496173542
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6749999999999999,
+          "own_surplus": 0.02499999999999991,
+          "opponent_acceptance": {
+            "bob": 0.6208252151823807,
+            "carl": 0.6350994699048289
+          },
+          "score": 0.009857144126646998
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6709999999999999,
+          "own_surplus": 0.020999999999999908,
+          "opponent_acceptance": {
+            "bob": 0.5082524755682172,
+            "carl": 0.8659730079315292
+          },
+          "score": 0.009242791426185516
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.6759999999999999,
+          "own_surplus": 0.025999999999999912,
+          "opponent_acceptance": {
+            "bob": 0.5125681460702534,
+            "carl": 0.49794255180486774
+          },
+          "score": 0.006635966756330893
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "immediate",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6649999999999999,
+          "own_surplus": 0.014999999999999902,
+          "opponent_acceptance": {
+            "bob": 0.43042511091396995,
+            "carl": 0.9079059683467567
+          },
+          "score": 0.005861782906876583
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.67,
+          "own_surplus": 0.020000000000000018,
+          "opponent_acceptance": {
+            "bob": 0.4410687490028387,
+            "carl": 0.5947403081157521
+          },
+          "score": 0.005246427273643557
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "full"
+          },
+          "own_utility": 0.6799999999999999,
+          "own_surplus": 0.029999999999999916,
+          "opponent_acceptance": {
+            "bob": 0.6147143586558185,
+            "carl": 0.26003210098796625
+          },
+          "score": 0.0047953639856622675
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "split",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6659999999999999,
+          "own_surplus": 0.015999999999999903,
+          "opponent_acceptance": {
+            "bob": 0.3909578859378984,
+            "carl": 0.6226927787558332
+          },
+          "score": 0.003895146437938793
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.6699999999999999,
+          "own_surplus": 0.019999999999999907,
+          "opponent_acceptance": {
+            "bob": 0.5070480954152734,
+            "carl": 0.3367565402313716
+          },
+          "score": 0.0034150352468590613
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.66,
+          "own_surplus": 0.010000000000000009,
+          "opponent_acceptance": {
+            "bob": 0.6139501511961871,
+            "carl": 0.5402383925804886
+          },
+          "score": 0.003316794428067763
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "split",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.656,
+          "own_surplus": 0.006000000000000005,
+          "opponent_acceptance": {
+            "bob": 0.5110321042917215,
+            "carl": 0.7771013224703236
+          },
+          "score": 0.0023827423444193366
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "72h",
+            "cost_responsibility": "management",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "full"
+          },
+          "own_utility": 0.66,
+          "own_surplus": 0.010000000000000009,
+          "opponent_acceptance": {
+            "bob": 0.3205532012894742,
+            "carl": 0.714037409559626
+          },
+          "score": 0.0022888697747478173
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "carl",
+            "employment_protection": "verbal",
+            "work_pay_protection": "partial",
+            "documentation": "basic"
+          },
+          "own_utility": 0.65,
+          "own_surplus": 0.0,
+          "opponent_acceptance": {
+            "bob": 0.5054073035214576,
+            "carl": 0.655422285923785
+          },
+          "score": 0.0
+        },
+        {
+          "offer": {
+            "handler": "specialist",
+            "timing": "24h",
+            "cost_responsibility": "management",
+            "employment_protection": "none",
+            "work_pay_protection": "full",
+            "documentation": "basic"
+          },
+          "own_utility": 0.65,
+          "own_surplus": 0.0,
+          "opponent_acceptance": {
+            "bob": 0.43832574949353154,
+            "carl": 0.8343828404886211
+          },
+          "score": 0.0
+        }
+      ],
+      "predicted_acceptance": {
+        "bob": 0.8728557767077423,
+        "carl": 0.6691484643226184
+      },
+      "selected_action": "PROPOSE",
+      "selected_offer": {
+        "handler": "specialist",
+        "timing": "immediate",
+        "cost_responsibility": "management",
+        "employment_protection": "written",
+        "work_pay_protection": "full",
+        "documentation": "full"
+      },
+      "decision_reason": "Highest configured proposer-surplus times posterior-predictive acceptance score; stable option-order tie break."
+    },
+    {
+      "turn": 2,
+      "agent": "bob",
+      "observed_events": [
+        {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.1709868607561865,
+              "timing": 0.17126420106799806,
+              "cost_responsibility": 0.16096318348600158,
+              "employment_protection": 0.15873556537592412,
+              "work_pay_protection": 0.16412414139141845,
+              "documentation": 0.17392604792247082
+            },
+            "posterior_weight_variance": {
+              "handler": 0.02051879950236715,
+              "timing": 0.02086004362454171,
+              "cost_responsibility": 0.019210156720254924,
+              "employment_protection": 0.018781753105674478,
+              "work_pay_protection": 0.019758958507060505,
+              "documentation": 0.021453882244981834
+            }
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.1709868607561865,
+              "timing": 0.17126420106799806,
+              "cost_responsibility": 0.16096318348600158,
+              "employment_protection": 0.15873556537592412,
+              "work_pay_protection": 0.16412414139141845,
+              "documentation": 0.17392604792247082
+            },
+            "posterior_weight_variance": {
+              "handler": 0.02051879950236715,
+              "timing": 0.02086004362454171,
+              "cost_responsibility": 0.019210156720254924,
+              "employment_protection": 0.018781753105674478,
+              "work_pay_protection": 0.019758958507060505,
+              "documentation": 0.021453882244981834
+            }
+          }
+        }
+      ],
+      "current_offer": {
+        "handler": "specialist",
+        "timing": "immediate",
+        "cost_responsibility": "management",
+        "employment_protection": "written",
+        "work_pay_protection": "full",
+        "documentation": "full"
+      },
+      "own_utility": 0.965,
+      "opponent_beliefs_before": {
+        "alice": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.1709868607561865,
+            "timing": 0.17126420106799806,
+            "cost_responsibility": 0.16096318348600158,
+            "employment_protection": 0.15873556537592412,
+            "work_pay_protection": 0.16412414139141845,
+            "documentation": 0.17392604792247082
+          },
+          "posterior_weight_variance": {
+            "handler": 0.02051879950236715,
+            "timing": 0.02086004362454171,
+            "cost_responsibility": 0.019210156720254924,
+            "employment_protection": 0.018781753105674478,
+            "work_pay_protection": 0.019758958507060505,
+            "documentation": 0.021453882244981834
+          }
+        },
+        "carl": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16543017055280795,
+            "timing": 0.16629512639481314,
+            "cost_responsibility": 0.16596785734465813,
+            "employment_protection": 0.167307842279609,
+            "work_pay_protection": 0.16920718401223073,
+            "documentation": 0.16579181941588117
+          },
+          "posterior_weight_variance": {
+            "handler": 0.018880125781041448,
+            "timing": 0.01939831842432145,
+            "cost_responsibility": 0.019283378265959734,
+            "employment_protection": 0.019097631947539412,
+            "work_pay_protection": 0.020112390314376907,
+            "documentation": 0.019819991416163075
+          }
+        }
+      },
+      "evidence": [
+        null
+      ],
+      "posterior_update": [],
+      "opponent_beliefs_after": {
+        "alice": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.1709868607561865,
+            "timing": 0.17126420106799806,
+            "cost_responsibility": 0.16096318348600158,
+            "employment_protection": 0.15873556537592412,
+            "work_pay_protection": 0.16412414139141845,
+            "documentation": 0.17392604792247082
+          },
+          "posterior_weight_variance": {
+            "handler": 0.02051879950236715,
+            "timing": 0.02086004362454171,
+            "cost_responsibility": 0.019210156720254924,
+            "employment_protection": 0.018781753105674478,
+            "work_pay_protection": 0.019758958507060505,
+            "documentation": 0.021453882244981834
+          }
+        },
+        "carl": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16543017055280795,
+            "timing": 0.16629512639481314,
+            "cost_responsibility": 0.16596785734465813,
+            "employment_protection": 0.167307842279609,
+            "work_pay_protection": 0.16920718401223073,
+            "documentation": 0.16579181941588117
+          },
+          "posterior_weight_variance": {
+            "handler": 0.018880125781041448,
+            "timing": 0.01939831842432145,
+            "cost_responsibility": 0.019283378265959734,
+            "employment_protection": 0.019097631947539412,
+            "work_pay_protection": 0.020112390314376907,
+            "documentation": 0.019819991416163075
+          }
+        }
+      },
+      "candidate_offer_count": 0,
+      "candidate_offers_considered": [],
+      "candidate_scores": [],
+      "predicted_acceptance": {},
+      "selected_action": "ACCEPT",
+      "selected_offer": {
+        "handler": "specialist",
+        "timing": "immediate",
+        "cost_responsibility": "management",
+        "employment_protection": "written",
+        "work_pay_protection": "full",
+        "documentation": "full"
+      },
+      "decision_reason": "Own utility 0.965000 reaches reservation 0.700000."
+    },
+    {
+      "turn": 3,
+      "agent": "carl",
+      "observed_events": [
+        {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16384447121628207,
+              "timing": 0.16659244784303553,
+              "cost_responsibility": 0.16913246641871266,
+              "employment_protection": 0.16326054871446996,
+              "work_pay_protection": 0.16885882217372347,
+              "documentation": 0.16831124363377656
+            },
+            "posterior_weight_variance": {
+              "handler": 0.019490219071323714,
+              "timing": 0.019202241338992385,
+              "cost_responsibility": 0.02000756988352423,
+              "employment_protection": 0.01935856481394512,
+              "work_pay_protection": 0.02066846431401899,
+              "documentation": 0.020729640868639782
+            }
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16384447121628207,
+              "timing": 0.16659244784303553,
+              "cost_responsibility": 0.16913246641871266,
+              "employment_protection": 0.16326054871446996,
+              "work_pay_protection": 0.16885882217372347,
+              "documentation": 0.16831124363377656
+            },
+            "posterior_weight_variance": {
+              "handler": 0.019490219071323714,
+              "timing": 0.019202241338992385,
+              "cost_responsibility": 0.02000756988352423,
+              "employment_protection": 0.01935856481394512,
+              "work_pay_protection": 0.02066846431401899,
+              "documentation": 0.020729640868639782
+            }
+          }
+        },
+        {
+          "event": {
+            "actor": "bob",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 2
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.164916951633587,
+              "timing": 0.16579252428055502,
+              "cost_responsibility": 0.16440663009518383,
+              "employment_protection": 0.17131657537075262,
+              "work_pay_protection": 0.1664112312978511,
+              "documentation": 0.16715608732207088
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01867464309704033,
+              "timing": 0.019866546377758813,
+              "cost_responsibility": 0.019567326015250464,
+              "employment_protection": 0.020046015815355388,
+              "work_pay_protection": 0.02003757206119981,
+              "documentation": 0.019436252501604485
+            }
+          },
+          "evidence": {
+            "action": "ACCEPT",
+            "particle_count": 2000,
+            "ess_before": 1999.9999999999995,
+            "ess_after_update": 1969.541499432314,
+            "ess_after": 1969.541499432314,
+            "resampling_performed": false,
+            "posterior_mean_weights": {
+              "handler": 0.16913343306120815,
+              "timing": 0.1640359217579142,
+              "cost_responsibility": 0.1485826419439434,
+              "employment_protection": 0.17635339037893596,
+              "work_pay_protection": 0.17071748877974285,
+              "documentation": 0.17117712407825542
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01916152306743779,
+              "timing": 0.01958751962816103,
+              "cost_responsibility": 0.015826668836494667,
+              "employment_protection": 0.020540989284993292,
+              "work_pay_protection": 0.02072144312910306,
+              "documentation": 0.020035039274957697
+            }
+          },
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 1,
+            "ess": 1969.541499432314,
+            "posterior_mean_weights": {
+              "handler": 0.16913343306120815,
+              "timing": 0.1640359217579142,
+              "cost_responsibility": 0.1485826419439434,
+              "employment_protection": 0.17635339037893596,
+              "work_pay_protection": 0.17071748877974285,
+              "documentation": 0.17117712407825542
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01916152306743779,
+              "timing": 0.01958751962816103,
+              "cost_responsibility": 0.015826668836494667,
+              "employment_protection": 0.020540989284993292,
+              "work_pay_protection": 0.02072144312910306,
+              "documentation": 0.020035039274957697
+            }
+          }
+        }
+      ],
+      "current_offer": {
+        "handler": "specialist",
+        "timing": "immediate",
+        "cost_responsibility": "management",
+        "employment_protection": "written",
+        "work_pay_protection": "full",
+        "documentation": "full"
+      },
+      "own_utility": 0.72,
+      "opponent_beliefs_before": {
+        "alice": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16384447121628207,
+            "timing": 0.16659244784303553,
+            "cost_responsibility": 0.16913246641871266,
+            "employment_protection": 0.16326054871446996,
+            "work_pay_protection": 0.16885882217372347,
+            "documentation": 0.16831124363377656
+          },
+          "posterior_weight_variance": {
+            "handler": 0.019490219071323714,
+            "timing": 0.019202241338992385,
+            "cost_responsibility": 0.02000756988352423,
+            "employment_protection": 0.01935856481394512,
+            "work_pay_protection": 0.02066846431401899,
+            "documentation": 0.020729640868639782
+          }
+        },
+        "bob": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.164916951633587,
+            "timing": 0.16579252428055502,
+            "cost_responsibility": 0.16440663009518383,
+            "employment_protection": 0.17131657537075262,
+            "work_pay_protection": 0.1664112312978511,
+            "documentation": 0.16715608732207088
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01867464309704033,
+            "timing": 0.019866546377758813,
+            "cost_responsibility": 0.019567326015250464,
+            "employment_protection": 0.020046015815355388,
+            "work_pay_protection": 0.02003757206119981,
+            "documentation": 0.019436252501604485
+          }
+        }
+      },
+      "evidence": [
+        null,
+        {
+          "action": "ACCEPT",
+          "particle_count": 2000,
+          "ess_before": 1999.9999999999995,
+          "ess_after_update": 1969.541499432314,
+          "ess_after": 1969.541499432314,
+          "resampling_performed": false,
+          "posterior_mean_weights": {
+            "handler": 0.16913343306120815,
+            "timing": 0.1640359217579142,
+            "cost_responsibility": 0.1485826419439434,
+            "employment_protection": 0.17635339037893596,
+            "work_pay_protection": 0.17071748877974285,
+            "documentation": 0.17117712407825542
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01916152306743779,
+            "timing": 0.01958751962816103,
+            "cost_responsibility": 0.015826668836494667,
+            "employment_protection": 0.020540989284993292,
+            "work_pay_protection": 0.02072144312910306,
+            "documentation": 0.020035039274957697
+          }
+        }
+      ],
+      "posterior_update": [
+        {
+          "action": "ACCEPT",
+          "particle_count": 2000,
+          "ess_before": 1999.9999999999995,
+          "ess_after_update": 1969.541499432314,
+          "ess_after": 1969.541499432314,
+          "resampling_performed": false,
+          "posterior_mean_weights": {
+            "handler": 0.16913343306120815,
+            "timing": 0.1640359217579142,
+            "cost_responsibility": 0.1485826419439434,
+            "employment_protection": 0.17635339037893596,
+            "work_pay_protection": 0.17071748877974285,
+            "documentation": 0.17117712407825542
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01916152306743779,
+            "timing": 0.01958751962816103,
+            "cost_responsibility": 0.015826668836494667,
+            "employment_protection": 0.020540989284993292,
+            "work_pay_protection": 0.02072144312910306,
+            "documentation": 0.020035039274957697
+          }
+        }
+      ],
+      "opponent_beliefs_after": {
+        "alice": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 0,
+          "ess": 1999.9999999999995,
+          "posterior_mean_weights": {
+            "handler": 0.16384447121628207,
+            "timing": 0.16659244784303553,
+            "cost_responsibility": 0.16913246641871266,
+            "employment_protection": 0.16326054871446996,
+            "work_pay_protection": 0.16885882217372347,
+            "documentation": 0.16831124363377656
+          },
+          "posterior_weight_variance": {
+            "handler": 0.019490219071323714,
+            "timing": 0.019202241338992385,
+            "cost_responsibility": 0.02000756988352423,
+            "employment_protection": 0.01935856481394512,
+            "work_pay_protection": 0.02066846431401899,
+            "documentation": 0.020729640868639782
+          }
+        },
+        "bob": {
+          "kind": "dirichlet_particles",
+          "particle_count": 2000,
+          "observation_count": 1,
+          "ess": 1969.541499432314,
+          "posterior_mean_weights": {
+            "handler": 0.16913343306120815,
+            "timing": 0.1640359217579142,
+            "cost_responsibility": 0.1485826419439434,
+            "employment_protection": 0.17635339037893596,
+            "work_pay_protection": 0.17071748877974285,
+            "documentation": 0.17117712407825542
+          },
+          "posterior_weight_variance": {
+            "handler": 0.01916152306743779,
+            "timing": 0.01958751962816103,
+            "cost_responsibility": 0.015826668836494667,
+            "employment_protection": 0.020540989284993292,
+            "work_pay_protection": 0.02072144312910306,
+            "documentation": 0.020035039274957697
+          }
+        }
+      },
+      "candidate_offer_count": 0,
+      "candidate_offers_considered": [],
+      "candidate_scores": [],
+      "predicted_acceptance": {},
+      "selected_action": "ACCEPT",
+      "selected_offer": {
+        "handler": "specialist",
+        "timing": "immediate",
+        "cost_responsibility": "management",
+        "employment_protection": "written",
+        "work_pay_protection": "full",
+        "documentation": "full"
+      },
+      "decision_reason": "Own utility 0.720000 reaches reservation 0.450000."
+    }
+  ],
+  "mode": "bayesian_issue_weights",
+  "structural_deadlock_oracle": false
+}

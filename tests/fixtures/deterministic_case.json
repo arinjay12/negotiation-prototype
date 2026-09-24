@@ -1,0 +1,11 @@
+{
+  "scenario": "configs/toxic_waste.json",
+  "feasible_offer_count": 162,
+  "expected_offer": {
+    "handler": "specialist", "timing": "24h", "cost_responsibility": "split",
+    "employment_protection": "written", "work_pay_protection": "full", "documentation": "full"
+  },
+  "expected_utilities": {"alice": 0.996, "bob": 0.985, "carl": 0.54},
+  "expected_status": "agreement",
+  "expected_actions": ["PROPOSE", "ACCEPT", "ACCEPT"]
+}

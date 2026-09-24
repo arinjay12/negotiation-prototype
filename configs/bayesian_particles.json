@@ -1,0 +1,17 @@
+{
+  "description": "Synthetic Bayesian v1 parameters. Each observer keeps a separate filter for each opponent.",
+  "observers": {
+    "alice": {
+      "bob": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 101, "ess_threshold": 0.4, "resample": true},
+      "carl": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 102, "ess_threshold": 0.4, "resample": true}
+    },
+    "bob": {
+      "alice": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 201, "ess_threshold": 0.4, "resample": true},
+      "carl": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 202, "ess_threshold": 0.4, "resample": true}
+    },
+    "carl": {
+      "alice": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 301, "ess_threshold": 0.4, "resample": true},
+      "bob": {"alpha": [1, 1, 1, 1, 1, 1], "count": 2000, "beta": 12, "seed": 302, "ess_threshold": 0.4, "resample": true}
+    }
+  }
+}

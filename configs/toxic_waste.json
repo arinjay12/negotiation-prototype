@@ -1,0 +1,90 @@
+{
+  "id": "toxic_waste_synthetic_v1",
+  "description": "Synthetic development fixture; rules are not legal findings and preferences are not measurements of real people.",
+  "issues": [
+    {"name": "handler", "options": ["alice", "specialist"]},
+    {"name": "timing", "options": ["immediate", "24h", "72h"]},
+    {"name": "cost_responsibility", "options": ["carl", "management", "split"]},
+    {"name": "employment_protection", "options": ["none", "verbal", "written"]},
+    {"name": "work_pay_protection", "options": ["none", "partial", "full"]},
+    {"name": "documentation", "options": ["none", "basic", "full"]}
+  ],
+  "constraints": [
+    {"id": "synthetic_specialist_only", "kind": "forbid", "issue": "handler", "value": "alice", "rationale": "Synthetic safety rule for development, not a legal conclusion."},
+    {"id": "synthetic_documentation_required", "kind": "forbid", "issue": "documentation", "value": "none", "rationale": "Synthetic documentation requirement for development."}
+  ],
+  "turn_order": ["alice", "bob", "carl"],
+  "max_turns": 18,
+  "offer_objective": "proposer_surplus_times_acceptance",
+  "structural_deadlock_check": true,
+  "stakeholders": [
+    {
+      "id": "alice", "goals": ["physical_safety", "employment_security", "scheduled_income", "respectful_treatment"],
+      "known_facts": ["hazardous_waste_requested", "renewal_pressure_reported"],
+      "constraint_ids": ["synthetic_specialist_only"],
+      "utility": {
+        "weights": {"handler": 0.35, "timing": 0.05, "cost_responsibility": 0.02, "employment_protection": 0.30, "work_pay_protection": 0.20, "documentation": 0.08},
+        "option_values": {
+          "handler": {"alice": 0, "specialist": 1},
+          "timing": {"immediate": 0.7, "24h": 1, "72h": 0.6},
+          "cost_responsibility": {"carl": 1, "management": 0.5, "split": 0.8},
+          "employment_protection": {"none": 0, "verbal": 0.3, "written": 1},
+          "work_pay_protection": {"none": 0, "partial": 0.5, "full": 1},
+          "documentation": {"none": 0, "basic": 0.5, "full": 1}
+        },
+        "reservation": 0.65
+      }
+    },
+    {
+      "id": "bob", "goals": ["worker_safety", "enforceable_protection", "documentation", "union_responsibility"],
+      "known_facts": ["hazardous_waste_requested", "represents_alice"],
+      "constraint_ids": ["synthetic_specialist_only", "synthetic_documentation_required"],
+      "utility": {
+        "weights": {"handler": 0.35, "timing": 0.05, "cost_responsibility": 0.05, "employment_protection": 0.25, "work_pay_protection": 0.10, "documentation": 0.20},
+        "option_values": {
+          "handler": {"alice": 0, "specialist": 1},
+          "timing": {"immediate": 0.8, "24h": 1, "72h": 0.5},
+          "cost_responsibility": {"carl": 1, "management": 0.5, "split": 0.7},
+          "employment_protection": {"none": 0, "verbal": 0.2, "written": 1},
+          "work_pay_protection": {"none": 0, "partial": 0.5, "full": 1},
+          "documentation": {"none": 0, "basic": 0.5, "full": 1}
+        },
+        "reservation": 0.70
+      }
+    },
+    {
+      "id": "carl", "goals": ["waste_removed", "speed", "cost_control", "operational_continuity", "risk_control"],
+      "known_facts": ["hazardous_waste_requested"],
+      "constraint_ids": ["synthetic_specialist_only"],
+      "utility": {
+        "weights": {"handler": 0.15, "timing": 0.30, "cost_responsibility": 0.30, "employment_protection": 0.05, "work_pay_protection": 0.10, "documentation": 0.10},
+        "option_values": {
+          "handler": {"alice": 1, "specialist": 0.4},
+          "timing": {"immediate": 1, "24h": 0.7, "72h": 0.2},
+          "cost_responsibility": {"carl": 0, "management": 1, "split": 0.7},
+          "employment_protection": {"none": 1, "verbal": 0.8, "written": 0.4},
+          "work_pay_protection": {"none": 1, "partial": 0.5, "full": 0},
+          "documentation": {"none": 1, "basic": 0.7, "full": 0.4}
+        },
+        "reservation": 0.45
+      }
+    }
+  ],
+  "knowledge_graph": {
+    "nodes": [
+      {"id": "alice", "type": "Stakeholder"}, {"id": "bob", "type": "Stakeholder"},
+      {"id": "carl", "type": "Stakeholder"}, {"id": "physical_safety", "type": "Goal"},
+      {"id": "employment_security", "type": "Goal"}, {"id": "waste_removed", "type": "Goal"},
+      {"id": "specialist_removal", "type": "Action"}, {"id": "hazardous_waste", "type": "Hazard"}
+    ],
+    "edges": [
+      {"source": "alice", "relation": "HAS_GOAL", "target": "physical_safety"},
+      {"source": "alice", "relation": "HAS_GOAL", "target": "employment_security"},
+      {"source": "bob", "relation": "REPRESENTS", "target": "alice"},
+      {"source": "carl", "relation": "HAS_GOAL", "target": "waste_removed"},
+      {"source": "specialist_removal", "relation": "SATISFIES", "target": "physical_safety"},
+      {"source": "specialist_removal", "relation": "SATISFIES", "target": "waste_removed"},
+      {"source": "hazardous_waste", "relation": "AFFECTS", "target": "physical_safety"}
+    ]
+  }
+}
