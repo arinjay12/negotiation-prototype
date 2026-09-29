@@ -8,6 +8,7 @@ from enum import Enum
 from typing import Any, Mapping, Protocol
 
 from .domain import Offer, Scenario, UtilityModel
+from .public import PublicScenario
 
 
 class Action(str, Enum):
@@ -28,7 +29,7 @@ class Event:
 
 @dataclass(frozen=True)
 class NegotiationState:
-    scenario: Scenario
+    scenario: PublicScenario
     feasible_offers: tuple[Offer, ...]
     current_offer: Offer | None
     proposed_offers: frozenset[Offer]
@@ -63,9 +64,9 @@ class Decision:
 
 
 class OpponentBelief(Protocol):
-    def predict_accept(self, offer: Offer, scenario: Scenario) -> float: ...
+    def predict_accept(self, offer: Offer, scenario: PublicScenario) -> float: ...
     def summary(self) -> Mapping[str, Any]: ...
-    def observe(self, event: Event, scenario: Scenario) -> Mapping[str, Any] | None: ...
+    def observe(self, event: Event, scenario: PublicScenario) -> Mapping[str, Any] | None: ...
 
 
 class KnownOpponent:
@@ -74,7 +75,7 @@ class KnownOpponent:
     def __init__(self, utility: UtilityModel):
         self.utility = utility
 
-    def predict_accept(self, offer: Offer, scenario: Scenario) -> float:
+    def predict_accept(self, offer: Offer, scenario: PublicScenario) -> float:
         return float(
             not scenario.violations(offer)
             and self.utility.evaluate(offer, scenario.issues) >= self.utility.reservation
@@ -83,13 +84,13 @@ class KnownOpponent:
     def summary(self) -> Mapping[str, Any]:
         return {"kind": "perfect_information", "reservation": self.utility.reservation}
 
-    def observe(self, event: Event, scenario: Scenario) -> None:
+    def observe(self, event: Event, scenario: PublicScenario) -> None:
         return None
 
 
 class InferenceCore(ABC):
     @abstractmethod
-    def observe(self, event: Event, state: NegotiationState) -> None:
+    def observe(self, event: Event, state: NegotiationState) -> Mapping[str, Any] | None:
         """Process only information visible in the public event stream."""
 
     @abstractmethod
@@ -112,7 +113,7 @@ class InferenceCore(ABC):
 class OfferSearch(ABC):
     @abstractmethod
     def rank(
-        self, scenario: Scenario, own_utility: UtilityModel,
+        self, scenario: PublicScenario, own_utility: UtilityModel,
         beliefs: Mapping[str, OpponentBelief], feasible: tuple[Offer, ...],
         excluded: frozenset[Offer],
     ) -> tuple[Candidate, ...]: ...
@@ -122,13 +123,15 @@ class ExhaustiveSearch(OfferSearch):
     """Enumerate every feasible offer; stable ties follow configured option order."""
 
     def rank(self, scenario, own_utility, beliefs, feasible, excluded):
+        if not isinstance(scenario, PublicScenario):
+            raise TypeError("Offer search requires a public scenario view")
         candidates: list[Candidate] = []
         for offer in feasible:
             if offer in excluded:
                 continue
             own = own_utility.evaluate(offer, scenario.issues)
             surplus = own - own_utility.reservation
-            if surplus < -1e-12:
+            if surplus < 0:
                 continue
             probabilities = {id: belief.predict_accept(offer, scenario) for id, belief in beliefs.items()}
             probability_product = 1.0
@@ -143,41 +146,53 @@ class StandardInferenceCore(InferenceCore):
     """Own utility is known; opponent beliefs can be exact or Bayesian."""
 
     def __init__(
-        self, stakeholder_id: str, scenario: Scenario,
+        self, stakeholder_id: str, scenario: PublicScenario, own_utility: UtilityModel,
         beliefs: Mapping[str, OpponentBelief], search: OfferSearch | None = None,
     ) -> None:
+        if not isinstance(scenario, PublicScenario):
+            raise TypeError("Inference cores require a public scenario view")
         self.id = stakeholder_id
         self.scenario = scenario
-        self.own_utility = scenario.stakeholder(stakeholder_id).utility
-        if set(beliefs) != {person.id for person in scenario.stakeholders} - {stakeholder_id}:
+        own_utility.validate(scenario.issues)
+        self.own_utility = own_utility
+        if set(beliefs) != set(scenario.turn_order) - {stakeholder_id}:
             raise ValueError("One opponent belief is required per other stakeholder")
         self.beliefs = dict(beliefs)
         self.search = search or ExhaustiveSearch()
         self._observations: list[Mapping[str, Any]] = []
 
-    def observe(self, event: Event, state: NegotiationState) -> None:
+    def _validate_state(self, state: NegotiationState) -> None:
+        if not isinstance(state.scenario, PublicScenario) or state.scenario != self.scenario:
+            raise TypeError("Inference cores require their matching public scenario view")
+
+    def observe(self, event: Event, state: NegotiationState) -> Mapping[str, Any] | None:
+        self._validate_state(state)
         if event.actor == self.id:
-            return
+            return None
         belief = self.beliefs[event.actor]
         before = dict(belief.summary())
         update = belief.observe(event, state.scenario)
-        self._observations.append({
+        record = {
             "event": {"actor": event.actor, "action": event.action.value,
                       "offer": event.offer.as_dict(state.scenario.issues) if event.offer else None,
                       "turn": event.turn},
             "belief_before": before,
             "evidence": update,
             "belief_after": dict(belief.summary()),
-        })
+        }
+        self._observations.append(record)
+        return record
 
     def evaluate_offer(self, offer: Offer, state: NegotiationState) -> OfferEvaluation:
+        self._validate_state(state)
         violations = state.scenario.violations(offer)
         utility = self.own_utility.evaluate(offer, state.scenario.issues)
         return OfferEvaluation(utility, self.own_utility.reservation,
-                               not violations and utility >= self.own_utility.reservation - 1e-12,
+                               not violations and utility >= self.own_utility.reservation,
                                violations)
 
     def choose_action(self, state: NegotiationState) -> Decision:
+        self._validate_state(state)
         if state.current_offer is not None:
             evaluation = self.evaluate_offer(state.current_offer, state)
             if evaluation.acceptable:
@@ -189,7 +204,7 @@ class StandardInferenceCore(InferenceCore):
             selected = candidates[0]
             action = Action.PROPOSE if state.current_offer is None else Action.COUNTER
             return Decision(action, selected.offer,
-                            "Highest configured proposer-surplus times posterior-predictive acceptance score; stable option-order tie break.",
+                            "Highest configured proposer-surplus times opponent-acceptance score; stable option-order tie break.",
                             candidates)
         if state.current_offer is not None:
             return Decision(Action.REJECT, state.current_offer,
@@ -206,11 +221,11 @@ class StandardInferenceCore(InferenceCore):
 
 
 def perfect_information_cores(scenario: Scenario) -> dict[str, StandardInferenceCore]:
+    public = PublicScenario.from_scenario(scenario)
     return {
         person.id: StandardInferenceCore(
-            person.id, scenario,
+            person.id, public, person.utility,
             {other.id: KnownOpponent(other.utility) for other in scenario.stakeholders if other.id != person.id},
         )
         for person in scenario.stakeholders
     }
-

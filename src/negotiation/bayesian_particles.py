@@ -13,6 +13,7 @@ import numpy as np
 
 from .domain import Offer, Scenario
 from .inference import Action, Event, StandardInferenceCore
+from .public import PublicScenario
 
 
 @dataclass(frozen=True)
@@ -39,9 +40,11 @@ class DirichletParticleOpponent:
     """Weighted particles approximate a non-conjugate posterior over weights."""
 
     def __init__(
-        self, scenario: Scenario, option_values: Mapping[str, Mapping[str, float]],
+        self, scenario: PublicScenario, option_values: Mapping[str, Mapping[str, float]],
         reservation: float, config: ParticleConfig,
     ) -> None:
+        if not isinstance(scenario, PublicScenario):
+            raise TypeError("Particle models require a public scenario view")
         config.validate(len(scenario.issues))
         if not 0 <= reservation <= 1:
             raise ValueError("Reservation must be in [0, 1]")
@@ -50,6 +53,7 @@ class DirichletParticleOpponent:
         for issue in scenario.issues:
             if set(option_values[issue.name]) != set(issue.options):
                 raise ValueError(f"Missing fixed values for {issue.name}")
+        self.scenario = scenario
         self.issue_names = tuple(issue.name for issue in scenario.issues)
         self.option_values = option_values
         self.reservation = reservation
@@ -75,7 +79,9 @@ class DirichletParticleOpponent:
     def _acceptance(self, offer: Offer) -> np.ndarray:
         return np.exp(self._log_accept(offer))
 
-    def predict_accept(self, offer: Offer, scenario: Scenario) -> float:
+    def predict_accept(self, offer: Offer, scenario: PublicScenario) -> float:
+        if not isinstance(scenario, PublicScenario) or scenario != self.scenario:
+            raise TypeError("Particle predictions require their matching public scenario view")
         if scenario.violations(offer):
             return 0.0
         return float(self.weights @ self._acceptance(offer))
@@ -109,7 +115,9 @@ class DirichletParticleOpponent:
         self.particles = self.particles[np.minimum(indices, count - 1)].copy()
         self.weights.fill(1.0 / count)
 
-    def observe(self, event: Event, scenario: Scenario) -> Mapping[str, Any] | None:
+    def observe(self, event: Event, scenario: PublicScenario) -> Mapping[str, Any] | None:
+        if not isinstance(scenario, PublicScenario) or scenario != self.scenario:
+            raise TypeError("Particle observations require their matching public scenario view")
         if event.action not in (Action.ACCEPT, Action.REJECT) or event.offer is None:
             return None
         if scenario.violations(event.offer):
@@ -157,6 +165,7 @@ def bayesian_cores(
 
     if scenario.structural_deadlock_check:
         raise ValueError("Bayesian runs must disable the perfect-information structural deadlock oracle")
+    public = PublicScenario.from_scenario(scenario)
     cores: dict[str, StandardInferenceCore] = {}
     for observer in scenario.stakeholders:
         expected = {person.id for person in scenario.stakeholders if person.id != observer.id}
@@ -164,12 +173,10 @@ def bayesian_cores(
             raise ValueError(f"Missing opponent configuration for {observer.id}")
         beliefs = {
             opponent.id: DirichletParticleOpponent(
-                scenario, opponent.utility.option_values, opponent.utility.reservation,
+                public, opponent.utility.option_values, opponent.utility.reservation,
                 configurations[observer.id][opponent.id],
             )
             for opponent in scenario.stakeholders if opponent.id != observer.id
         }
-        cores[observer.id] = StandardInferenceCore(observer.id, scenario, beliefs)
+        cores[observer.id] = StandardInferenceCore(observer.id, public, observer.utility, beliefs)
     return cores
-
-

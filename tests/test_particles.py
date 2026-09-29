@@ -12,6 +12,7 @@ from negotiation.bayesian_particles import ParticleConfig, DirichletParticleOppo
 from negotiation.domain import Issue, Offer, Scenario, Stakeholder, UtilityModel, load_scenario
 from negotiation.inference import Action, Event, ExhaustiveSearch
 from negotiation.protocol import NegotiationController
+from negotiation.public import PublicScenario
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,11 +43,12 @@ class ParticleTests(unittest.TestCase):
     def setUp(self):
         self.fixture = json.loads((ROOT / "tests/fixtures/bayesian_case.json").read_text())
         self.scenario, self.own, self.opponent, self.fast_costly, self.slow_cheap = synthetic_two_issue_case()
+        self.public = PublicScenario.from_scenario(self.scenario)
         self.config = ParticleConfig(tuple(self.fixture["alpha"]), self.fixture["particle_count"],
                                      self.fixture["beta"], self.fixture["seed"])
 
     def make_model(self):
-        return DirichletParticleOpponent(self.scenario, self.opponent.option_values,
+        return DirichletParticleOpponent(self.public, self.opponent.option_values,
                                          self.fixture["reservation"], self.config)
 
     def test_prior_sampling_normalisation_and_seed(self):
@@ -61,10 +63,10 @@ class ParticleTests(unittest.TestCase):
         model = self.make_model()
         offers = (self.fast_costly, self.slow_cheap)
         search = ExhaustiveSearch()
-        before = search.rank(self.scenario, self.own, {"opponent": model}, offers, frozenset())
+        before = search.rank(self.public, self.own, {"opponent": model}, offers, frozenset())
         self.assertEqual(before[0].offer, self.slow_cheap)
-        prior_fast = model.predict_accept(self.fast_costly, self.scenario)
-        prior_slow = model.predict_accept(self.slow_cheap, self.scenario)
+        prior_fast = model.predict_accept(self.fast_costly, self.public)
+        prior_slow = model.predict_accept(self.slow_cheap, self.public)
         hidden = np.asarray(self.fixture["hidden_true_weights"])
         rng = np.random.default_rng(self.fixture["observation_seed"])
         observed = []
@@ -74,24 +76,24 @@ class ParticleTests(unittest.TestCase):
                 true_probability = 1 / (1 + np.exp(-self.config.beta * (hidden @ values - self.fixture["reservation"])))
                 action = Action.ACCEPT if rng.random() < true_probability else Action.REJECT
                 observed.append(action)
-                update = model.observe(Event("opponent", action, offer, turn), self.scenario)
+                update = model.observe(Event("opponent", action, offer, turn), self.public)
                 self.assertAlmostEqual(model.weights.sum(), 1.0)
                 self.assertGreater(update["ess_after"], 0)
         self.assertIn(Action.ACCEPT, observed)
         self.assertIn(Action.REJECT, observed)
         self.assertGreater(model.posterior_mean[0], 0.7)
-        self.assertGreater(model.predict_accept(self.fast_costly, self.scenario), prior_fast)
-        self.assertLess(model.predict_accept(self.slow_cheap, self.scenario), prior_slow)
-        after = search.rank(self.scenario, self.own, {"opponent": model}, offers, frozenset())
+        self.assertGreater(model.predict_accept(self.fast_costly, self.public), prior_fast)
+        self.assertLess(model.predict_accept(self.slow_cheap, self.public), prior_slow)
+        after = search.rank(self.public, self.own, {"opponent": model}, offers, frozenset())
         self.assertEqual(after[0].offer, self.fast_costly)
         self.assertEqual(model.observation_count, 2 * self.fixture["repetitions_per_offer"])
 
     def test_systematic_resampling_and_ignored_proposal(self):
         config = ParticleConfig((1, 1), 2000, 12, 3, ess_threshold=0.99, resample=True)
-        model = DirichletParticleOpponent(self.scenario, self.opponent.option_values, 0.55, config)
-        self.assertIsNone(model.observe(Event("opponent", Action.PROPOSE, self.fast_costly, 1), self.scenario))
+        model = DirichletParticleOpponent(self.public, self.opponent.option_values, 0.55, config)
+        self.assertIsNone(model.observe(Event("opponent", Action.PROPOSE, self.fast_costly, 1), self.public))
         self.assertEqual(model.observation_count, 0)
-        update = model.observe(Event("opponent", Action.ACCEPT, self.fast_costly, 2), self.scenario)
+        update = model.observe(Event("opponent", Action.ACCEPT, self.fast_costly, 2), self.public)
         self.assertTrue(update["resampling_performed"])
         self.assertAlmostEqual(model.effective_sample_size, 2000)
         self.assertAlmostEqual(model.weights.sum(), 1.0)

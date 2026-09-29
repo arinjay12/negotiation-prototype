@@ -44,6 +44,56 @@
           "reservation": 0.45
         }
       },
+      "broadcast_effects": {
+        "bob": {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.65
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.65
+          }
+        },
+        "carl": {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.65
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.65
+          }
+        }
+      },
       "candidate_offer_count": 94,
       "candidate_offers_considered": [
         {
@@ -2412,7 +2462,7 @@
         "work_pay_protection": "full",
         "documentation": "full"
       },
-      "decision_reason": "Highest configured proposer-surplus times posterior-predictive acceptance score; stable option-order tie break."
+      "decision_reason": "Highest configured proposer-surplus times opponent-acceptance score; stable option-order tie break."
     },
     {
       "turn": 2,
@@ -2474,6 +2524,56 @@
         "carl": {
           "kind": "perfect_information",
           "reservation": 0.45
+        }
+      },
+      "broadcast_effects": {
+        "alice": {
+          "event": {
+            "actor": "bob",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 2
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.7
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.7
+          }
+        },
+        "carl": {
+          "event": {
+            "actor": "bob",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 2
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.7
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.7
+          }
         }
       },
       "candidate_offer_count": 0,
@@ -2576,6 +2676,56 @@
         "bob": {
           "kind": "perfect_information",
           "reservation": 0.7
+        }
+      },
+      "broadcast_effects": {
+        "alice": {
+          "event": {
+            "actor": "carl",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 3
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.45
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.45
+          }
+        },
+        "bob": {
+          "event": {
+            "actor": "carl",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "24h",
+              "cost_responsibility": "split",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 3
+          },
+          "belief_before": {
+            "kind": "perfect_information",
+            "reservation": 0.45
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "perfect_information",
+            "reservation": 0.45
+          }
         }
       },
       "candidate_offer_count": 0,

@@ -116,6 +116,128 @@
           }
         }
       },
+      "broadcast_effects": {
+        "bob": {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.1709868607561865,
+              "timing": 0.17126420106799806,
+              "cost_responsibility": 0.16096318348600158,
+              "employment_protection": 0.15873556537592412,
+              "work_pay_protection": 0.16412414139141845,
+              "documentation": 0.17392604792247082
+            },
+            "posterior_weight_variance": {
+              "handler": 0.02051879950236715,
+              "timing": 0.02086004362454171,
+              "cost_responsibility": 0.019210156720254924,
+              "employment_protection": 0.018781753105674478,
+              "work_pay_protection": 0.019758958507060505,
+              "documentation": 0.021453882244981834
+            }
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.1709868607561865,
+              "timing": 0.17126420106799806,
+              "cost_responsibility": 0.16096318348600158,
+              "employment_protection": 0.15873556537592412,
+              "work_pay_protection": 0.16412414139141845,
+              "documentation": 0.17392604792247082
+            },
+            "posterior_weight_variance": {
+              "handler": 0.02051879950236715,
+              "timing": 0.02086004362454171,
+              "cost_responsibility": 0.019210156720254924,
+              "employment_protection": 0.018781753105674478,
+              "work_pay_protection": 0.019758958507060505,
+              "documentation": 0.021453882244981834
+            }
+          }
+        },
+        "carl": {
+          "event": {
+            "actor": "alice",
+            "action": "PROPOSE",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 1
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16384447121628207,
+              "timing": 0.16659244784303553,
+              "cost_responsibility": 0.16913246641871266,
+              "employment_protection": 0.16326054871446996,
+              "work_pay_protection": 0.16885882217372347,
+              "documentation": 0.16831124363377656
+            },
+            "posterior_weight_variance": {
+              "handler": 0.019490219071323714,
+              "timing": 0.019202241338992385,
+              "cost_responsibility": 0.02000756988352423,
+              "employment_protection": 0.01935856481394512,
+              "work_pay_protection": 0.02066846431401899,
+              "documentation": 0.020729640868639782
+            }
+          },
+          "evidence": null,
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16384447121628207,
+              "timing": 0.16659244784303553,
+              "cost_responsibility": 0.16913246641871266,
+              "employment_protection": 0.16326054871446996,
+              "work_pay_protection": 0.16885882217372347,
+              "documentation": 0.16831124363377656
+            },
+            "posterior_weight_variance": {
+              "handler": 0.019490219071323714,
+              "timing": 0.019202241338992385,
+              "cost_responsibility": 0.02000756988352423,
+              "employment_protection": 0.01935856481394512,
+              "work_pay_protection": 0.02066846431401899,
+              "documentation": 0.020729640868639782
+            }
+          }
+        }
+      },
       "candidate_offer_count": 94,
       "candidate_offers_considered": [
         {
@@ -2484,7 +2606,7 @@
         "work_pay_protection": "full",
         "documentation": "full"
       },
-      "decision_reason": "Highest configured proposer-surplus times posterior-predictive acceptance score; stable option-order tie break."
+      "decision_reason": "Highest configured proposer-surplus times opponent-acceptance score; stable option-order tie break."
     },
     {
       "turn": 2,
@@ -2653,6 +2775,174 @@
             "employment_protection": 0.019097631947539412,
             "work_pay_protection": 0.020112390314376907,
             "documentation": 0.019819991416163075
+          }
+        }
+      },
+      "broadcast_effects": {
+        "alice": {
+          "event": {
+            "actor": "bob",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 2
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16609136942426522,
+              "timing": 0.16862842270257425,
+              "cost_responsibility": 0.16703320387095255,
+              "employment_protection": 0.16717187658475643,
+              "work_pay_protection": 0.16354984683457105,
+              "documentation": 0.16752528058287988
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01991721670317012,
+              "timing": 0.020001378331750676,
+              "cost_responsibility": 0.019898940714410736,
+              "employment_protection": 0.0195550153773552,
+              "work_pay_protection": 0.018825336332183938,
+              "documentation": 0.02095312594016088
+            }
+          },
+          "evidence": {
+            "action": "ACCEPT",
+            "particle_count": 2000,
+            "ess_before": 1999.9999999999995,
+            "ess_after_update": 1968.7148145797864,
+            "ess_after": 1968.7148145797864,
+            "resampling_performed": false,
+            "posterior_mean_weights": {
+              "handler": 0.17117016342293165,
+              "timing": 0.1666183468806602,
+              "cost_responsibility": 0.15088122774516688,
+              "employment_protection": 0.17149999290025622,
+              "work_pay_protection": 0.16764088688411583,
+              "documentation": 0.17218938216686913
+            },
+            "posterior_weight_variance": {
+              "handler": 0.020620732053939318,
+              "timing": 0.019600973852594458,
+              "cost_responsibility": 0.016267505883746716,
+              "employment_protection": 0.0202206195262816,
+              "work_pay_protection": 0.019327525050233812,
+              "documentation": 0.021646640162126474
+            }
+          },
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 1,
+            "ess": 1968.7148145797864,
+            "posterior_mean_weights": {
+              "handler": 0.17117016342293165,
+              "timing": 0.1666183468806602,
+              "cost_responsibility": 0.15088122774516688,
+              "employment_protection": 0.17149999290025622,
+              "work_pay_protection": 0.16764088688411583,
+              "documentation": 0.17218938216686913
+            },
+            "posterior_weight_variance": {
+              "handler": 0.020620732053939318,
+              "timing": 0.019600973852594458,
+              "cost_responsibility": 0.016267505883746716,
+              "employment_protection": 0.0202206195262816,
+              "work_pay_protection": 0.019327525050233812,
+              "documentation": 0.021646640162126474
+            }
+          }
+        },
+        "carl": {
+          "event": {
+            "actor": "bob",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 2
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.164916951633587,
+              "timing": 0.16579252428055502,
+              "cost_responsibility": 0.16440663009518383,
+              "employment_protection": 0.17131657537075262,
+              "work_pay_protection": 0.1664112312978511,
+              "documentation": 0.16715608732207088
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01867464309704033,
+              "timing": 0.019866546377758813,
+              "cost_responsibility": 0.019567326015250464,
+              "employment_protection": 0.020046015815355388,
+              "work_pay_protection": 0.02003757206119981,
+              "documentation": 0.019436252501604485
+            }
+          },
+          "evidence": {
+            "action": "ACCEPT",
+            "particle_count": 2000,
+            "ess_before": 1999.9999999999995,
+            "ess_after_update": 1969.541499432314,
+            "ess_after": 1969.541499432314,
+            "resampling_performed": false,
+            "posterior_mean_weights": {
+              "handler": 0.16913343306120815,
+              "timing": 0.1640359217579142,
+              "cost_responsibility": 0.1485826419439434,
+              "employment_protection": 0.17635339037893596,
+              "work_pay_protection": 0.17071748877974285,
+              "documentation": 0.17117712407825542
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01916152306743779,
+              "timing": 0.01958751962816103,
+              "cost_responsibility": 0.015826668836494667,
+              "employment_protection": 0.020540989284993292,
+              "work_pay_protection": 0.02072144312910306,
+              "documentation": 0.020035039274957697
+            }
+          },
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 1,
+            "ess": 1969.541499432314,
+            "posterior_mean_weights": {
+              "handler": 0.16913343306120815,
+              "timing": 0.1640359217579142,
+              "cost_responsibility": 0.1485826419439434,
+              "employment_protection": 0.17635339037893596,
+              "work_pay_protection": 0.17071748877974285,
+              "documentation": 0.17117712407825542
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01916152306743779,
+              "timing": 0.01958751962816103,
+              "cost_responsibility": 0.015826668836494667,
+              "employment_protection": 0.020540989284993292,
+              "work_pay_protection": 0.02072144312910306,
+              "documentation": 0.020035039274957697
+            }
           }
         }
       },
@@ -2970,6 +3260,174 @@
             "employment_protection": 0.020540989284993292,
             "work_pay_protection": 0.02072144312910306,
             "documentation": 0.020035039274957697
+          }
+        }
+      },
+      "broadcast_effects": {
+        "alice": {
+          "event": {
+            "actor": "carl",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 3
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16489674060106152,
+              "timing": 0.16741169083074334,
+              "cost_responsibility": 0.17084307166514823,
+              "employment_protection": 0.1637875743512288,
+              "work_pay_protection": 0.16170356471329797,
+              "documentation": 0.17135735783852066
+            },
+            "posterior_weight_variance": {
+              "handler": 0.019216511653656627,
+              "timing": 0.020675595164905403,
+              "cost_responsibility": 0.020996295753900066,
+              "employment_protection": 0.018462175993349324,
+              "work_pay_protection": 0.018913477297475202,
+              "documentation": 0.020248874182492292
+            }
+          },
+          "evidence": {
+            "action": "ACCEPT",
+            "particle_count": 2000,
+            "ess_before": 1999.9999999999995,
+            "ess_after_update": 1740.1583585851563,
+            "ess_after": 1740.1583585851563,
+            "resampling_performed": false,
+            "posterior_mean_weights": {
+              "handler": 0.15690530653650706,
+              "timing": 0.19741311753735774,
+              "cost_responsibility": 0.2007896600637905,
+              "employment_protection": 0.15755476544038405,
+              "work_pay_protection": 0.12542409652898523,
+              "documentation": 0.1619130538929756
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01742612422778469,
+              "timing": 0.023721229753459066,
+              "cost_responsibility": 0.02412205495513162,
+              "employment_protection": 0.017289076106544236,
+              "work_pay_protection": 0.011253323671935678,
+              "documentation": 0.018733879802746312
+            }
+          },
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 1,
+            "ess": 1740.1583585851563,
+            "posterior_mean_weights": {
+              "handler": 0.15690530653650706,
+              "timing": 0.19741311753735774,
+              "cost_responsibility": 0.2007896600637905,
+              "employment_protection": 0.15755476544038405,
+              "work_pay_protection": 0.12542409652898523,
+              "documentation": 0.1619130538929756
+            },
+            "posterior_weight_variance": {
+              "handler": 0.01742612422778469,
+              "timing": 0.023721229753459066,
+              "cost_responsibility": 0.02412205495513162,
+              "employment_protection": 0.017289076106544236,
+              "work_pay_protection": 0.011253323671935678,
+              "documentation": 0.018733879802746312
+            }
+          }
+        },
+        "bob": {
+          "event": {
+            "actor": "carl",
+            "action": "ACCEPT",
+            "offer": {
+              "handler": "specialist",
+              "timing": "immediate",
+              "cost_responsibility": "management",
+              "employment_protection": "written",
+              "work_pay_protection": "full",
+              "documentation": "full"
+            },
+            "turn": 3
+          },
+          "belief_before": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 0,
+            "ess": 1999.9999999999995,
+            "posterior_mean_weights": {
+              "handler": 0.16543017055280795,
+              "timing": 0.16629512639481314,
+              "cost_responsibility": 0.16596785734465813,
+              "employment_protection": 0.167307842279609,
+              "work_pay_protection": 0.16920718401223073,
+              "documentation": 0.16579181941588117
+            },
+            "posterior_weight_variance": {
+              "handler": 0.018880125781041448,
+              "timing": 0.01939831842432145,
+              "cost_responsibility": 0.019283378265959734,
+              "employment_protection": 0.019097631947539412,
+              "work_pay_protection": 0.020112390314376907,
+              "documentation": 0.019819991416163075
+            }
+          },
+          "evidence": {
+            "action": "ACCEPT",
+            "particle_count": 2000,
+            "ess_before": 1999.9999999999995,
+            "ess_after_update": 1732.5947746886643,
+            "ess_after": 1732.5947746886643,
+            "resampling_performed": false,
+            "posterior_mean_weights": {
+              "handler": 0.15952680234573008,
+              "timing": 0.1957350186978318,
+              "cost_responsibility": 0.1954898322122859,
+              "employment_protection": 0.16142541776747885,
+              "work_pay_protection": 0.13061305506551668,
+              "documentation": 0.15720987391115657
+            },
+            "posterior_weight_variance": {
+              "handler": 0.017345108486081947,
+              "timing": 0.02230940686931853,
+              "cost_responsibility": 0.022203018194465247,
+              "employment_protection": 0.017456611064368095,
+              "work_pay_protection": 0.01142075766262442,
+              "documentation": 0.018217875667756192
+            }
+          },
+          "belief_after": {
+            "kind": "dirichlet_particles",
+            "particle_count": 2000,
+            "observation_count": 1,
+            "ess": 1732.5947746886643,
+            "posterior_mean_weights": {
+              "handler": 0.15952680234573008,
+              "timing": 0.1957350186978318,
+              "cost_responsibility": 0.1954898322122859,
+              "employment_protection": 0.16142541776747885,
+              "work_pay_protection": 0.13061305506551668,
+              "documentation": 0.15720987391115657
+            },
+            "posterior_weight_variance": {
+              "handler": 0.017345108486081947,
+              "timing": 0.02230940686931853,
+              "cost_responsibility": 0.022203018194465247,
+              "employment_protection": 0.017456611064368095,
+              "work_pay_protection": 0.01142075766262442,
+              "documentation": 0.018217875667756192
+            }
           }
         }
       },

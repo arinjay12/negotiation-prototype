@@ -37,12 +37,12 @@ Run the tests:
 python -m unittest discover -s tests -v
 ```
 
-The tests cover offer validation, constraint filtering, utility calculations, exhaustive search, protocol outcomes, particle likelihoods and normalisation, reproducibility, resampling, and a synthetic case in which observations change predictions and offer ranking.
+The tests cover offer validation, constraint filtering, utility calculations, exhaustive search, protocol outcomes, particle likelihoods and normalisation, reproducibility, resampling, public event routing, and a multi-round synthetic negotiation in which a rejection changes a later counteroffer.
 
 ## Interpretation and current limits
 
 The scenario rules and stakeholder preferences are illustrative configuration values. They are not legal findings or preferences measured from Alice, Bob, or Carl. The deterministic baseline uses known configured utilities to check exact behavior, including structural deadlock. Bayesian runs do not use that perfect-information structural check.
 
-The particle model infers issue weights only. Option values, reservation values, and the logistic response parameter remain fixed. Counteroffers appear in the public trace but do not yet contribute a pairwise-preference likelihood. The in-process synthetic scenario retains full utilities for evaluation, so private profiles are not isolated from agent code.
+The particle model infers issue weights only. Option values, reservation values, and the logistic response parameter remain fixed. Counteroffers appear in the public trace but do not yet contribute a pairwise-preference likelihood. Inference cores receive a public scenario view and their own utility. Bayesian opponent beliefs receive fixed option values and reservations, but not the synthetic true opponent issue weights. The controller retains full profiles for outcome diagnostics; the public view is an API boundary, not process-level security isolation.
 
 This repository does not include a human review loop, language model, UI, evolutionary search, Coppélia, quantum model, or real-user evaluation.

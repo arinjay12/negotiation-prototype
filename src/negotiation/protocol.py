@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, replace
 from typing import Any, Mapping
 
 from .domain import Offer, Scenario
 from .inference import Action, Decision, Event, InferenceCore, NegotiationState
+from .public import PublicScenario
 
 
 @dataclass(frozen=True)
@@ -20,6 +21,7 @@ class TurnTrace:
     evidence: tuple[Any, ...]
     posterior_update: tuple[Any, ...]
     opponent_beliefs_after: Mapping[str, Any]
+    broadcast_effects: Mapping[str, Any]
     candidate_offer_count: int
     candidate_offers_considered: tuple[Mapping[str, str], ...]
     candidate_scores: tuple[Mapping[str, Any], ...]
@@ -64,10 +66,11 @@ class NegotiationController:
         if set(cores) != set(scenario.turn_order):
             raise ValueError("One inference core is required per stakeholder")
         self.scenario = scenario
+        self.public_scenario = PublicScenario.from_scenario(scenario)
         self.cores = dict(cores)
 
     def _state(self, feasible, current, proposed, accepted, turn, latest):
-        return NegotiationState(self.scenario, feasible, current,
+        return NegotiationState(self.public_scenario, feasible, current,
                                 frozenset(proposed), frozenset(accepted), turn, latest)
 
     def _structural_deadlock(self, feasible: tuple[Offer, ...]) -> bool:
@@ -80,7 +83,7 @@ class NegotiationController:
         )
 
     def run(self) -> NegotiationResult:
-        feasible = self.scenario.feasible_offers()
+        feasible = self.public_scenario.feasible_offers()
         if self._structural_deadlock(feasible):
             return NegotiationResult(
                 "deadlock", None, None, None,
@@ -123,7 +126,7 @@ class NegotiationController:
                 opponent_beliefs_before=beliefs_before,
                 evidence=tuple(item["evidence"] for item in observed),
                 posterior_update=tuple(item["evidence"] for item in observed if item["evidence"] is not None),
-                opponent_beliefs_after=beliefs_after,
+                opponent_beliefs_after=beliefs_after, broadcast_effects={},
                 candidate_offer_count=len(decision.candidates),
                 candidate_offers_considered=tuple(candidate.offer.as_dict(self.scenario.issues) for candidate in decision.candidates),
                 candidate_scores=candidate_scores,
@@ -150,10 +153,17 @@ class NegotiationController:
                     tuple(traces),
                 )
             latest = Event(actor, decision.action, event_offer, turn)
-            # Broadcast public events immediately; private utilities stay in each core.
+            # Broadcast public events immediately; record every observer's effect,
+            # including updates after the final acceptance.
+            effects = {}
             for observer_id, observer in self.cores.items():
                 if observer_id != actor:
-                    observer.observe(latest, self._state(feasible, current, proposed, accepted, turn, latest))
+                    effect = observer.observe(
+                        latest, self._state(feasible, current, proposed, accepted, turn, latest)
+                    )
+                    if effect is not None:
+                        effects[observer_id] = effect
+            traces[-1] = replace(traces[-1], broadcast_effects=effects)
             if current is not None and accepted == set(self.scenario.turn_order):
                 utilities = {person.id: person.utility.evaluate(current, self.scenario.issues)
                              for person in self.scenario.stakeholders}
