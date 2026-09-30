@@ -1,6 +1,8 @@
 # Negotiation prototype
 
-A Python research prototype for structured, three-agent negotiation over a hazardous-waste handling scenario. Agents evaluate discrete package offers and produce either an agreement accepted by all three agents or a deadlock. Decisions and belief updates are recorded as JSON traces.
+This research prototype studies a structured negotiation among Alice, Bob, and Carl over a hazardous-waste handling scenario. I began with an explicit, LLM-free deterministic baseline to check the negotiation mechanics, then added a Bayesian particle model that estimates opponents' issue weights instead of assuming they are known.
+
+The scenario is still synthetic: utility weights, option values, reservation values, and system constraints are configured manually. That keeps the protocol and inference model testable while preference elicitation and empirical evaluation remain future work. Runs end in either an agreement accepted by all three agents or a deadlock, with decisions and belief updates recorded as JSON traces.
 
 ## What is implemented
 
