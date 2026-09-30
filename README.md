@@ -5,7 +5,7 @@ A Python research prototype for structured, three-agent negotiation over a hazar
 ## What is implemented
 
 - A configurable six-issue offer space covering handler, timing, cost responsibility, employment protection, work/pay protection, and disposal documentation.
-- Declarative hard constraints that filter offers before they can be proposed. A simple knowledge graph stores scenario entities and relationships.
+- Declarative system constraints that apply to every offer and filter infeasible offers before they can be proposed. A simple knowledge graph stores scenario entities and relationships.
 - Additive stakeholder utilities with configured issue weights, option values, and reservation values.
 - Exhaustive search over feasible offers. The current offer score is the proposer's surplus multiplied by the other agents' predicted acceptance probabilities. Ties follow the configured issue and option order.
 - A rotating Alice -> Bob -> Carl protocol with propose, counter, accept, reject, agreement, and deadlock outcomes. A new proposal counts as the proposer's acceptance; the other agents must accept that same offer.
@@ -44,5 +44,7 @@ The tests cover offer validation, constraint filtering, utility calculations, ex
 The scenario rules and stakeholder preferences are illustrative configuration values. They are not legal findings or preferences measured from Alice, Bob, or Carl. The deterministic baseline uses known configured utilities to check exact behavior, including structural deadlock. Bayesian runs do not use that perfect-information structural check.
 
 The particle model infers issue weights only. Option values, reservation values, and the logistic response parameter remain fixed. Counteroffers appear in the public trace but do not yet contribute a pairwise-preference likelihood. Inference cores receive a public scenario view and their own utility. Bayesian opponent beliefs receive fixed option values and reservations, but not the synthetic true opponent issue weights. The controller retains full profiles for outcome diagnostics; the public view is an API boundary, not process-level security isolation.
+
+Stakeholder-specific hard constraints are not modeled. The configured system constraints apply equally to all stakeholders; personal non-negotiables would require a separate design for feasibility and acceptance.
 
 This repository does not include a human review loop, language model, UI, evolutionary search, Coppélia, quantum model, or real-user evaluation.

@@ -9,7 +9,7 @@
     {"name": "work_pay_protection", "options": ["none", "partial", "full"]},
     {"name": "documentation", "options": ["none", "basic", "full"]}
   ],
-  "constraints": [
+  "system_constraints": [
     {"id": "synthetic_specialist_only", "kind": "forbid", "issue": "handler", "value": "alice", "rationale": "Synthetic safety rule for development, not a legal conclusion."},
     {"id": "synthetic_documentation_required", "kind": "forbid", "issue": "documentation", "value": "none", "rationale": "Synthetic documentation requirement for development."}
   ],
@@ -21,7 +21,6 @@
     {
       "id": "alice", "goals": ["physical_safety", "employment_security", "scheduled_income", "respectful_treatment"],
       "known_facts": ["hazardous_waste_requested", "renewal_pressure_reported"],
-      "constraint_ids": ["synthetic_specialist_only"],
       "utility": {
         "weights": {"handler": 0.35, "timing": 0.05, "cost_responsibility": 0.02, "employment_protection": 0.30, "work_pay_protection": 0.20, "documentation": 0.08},
         "option_values": {
@@ -38,7 +37,6 @@
     {
       "id": "bob", "goals": ["worker_safety", "enforceable_protection", "documentation", "union_responsibility"],
       "known_facts": ["hazardous_waste_requested", "represents_alice"],
-      "constraint_ids": ["synthetic_specialist_only", "synthetic_documentation_required"],
       "utility": {
         "weights": {"handler": 0.35, "timing": 0.05, "cost_responsibility": 0.05, "employment_protection": 0.25, "work_pay_protection": 0.10, "documentation": 0.20},
         "option_values": {
@@ -55,7 +53,6 @@
     {
       "id": "carl", "goals": ["waste_removed", "speed", "cost_control", "operational_continuity", "risk_control"],
       "known_facts": ["hazardous_waste_requested"],
-      "constraint_ids": ["synthetic_specialist_only"],
       "utility": {
         "weights": {"handler": 0.15, "timing": 0.30, "cost_responsibility": 0.30, "employment_protection": 0.05, "work_pay_protection": 0.10, "documentation": 0.10},
         "option_values": {

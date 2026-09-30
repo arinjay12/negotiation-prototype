@@ -98,7 +98,6 @@ class Stakeholder:
     goals: tuple[str, ...]
     known_facts: tuple[str, ...]
     utility: UtilityModel
-    constraint_ids: tuple[str, ...] = ()
     # Beliefs and negotiation memory are held by the runtime inference core.
 
 
@@ -137,7 +136,7 @@ class Scenario:
     id: str
     issues: tuple[Issue, ...]
     stakeholders: tuple[Stakeholder, ...]
-    constraints: tuple[Constraint, ...]
+    system_constraints: tuple[Constraint, ...]
     graph: KnowledgeGraph = field(default_factory=KnowledgeGraph)
     turn_order: tuple[str, ...] = ()
     max_turns: int = 30
@@ -156,15 +155,13 @@ class Scenario:
         if self.offer_objective != "proposer_surplus_times_acceptance":
             raise ValueError("Unimplemented offer objective")
         issue_map = {issue.name: issue for issue in self.issues}
-        constraint_ids = {rule.id for rule in self.constraints}
-        if len(constraint_ids) != len(self.constraints):
+        system_constraint_ids = {rule.id for rule in self.system_constraints}
+        if len(system_constraint_ids) != len(self.system_constraints):
             raise ValueError("Constraint IDs must be unique")
-        for rule in self.constraints:
+        for rule in self.system_constraints:
             rule.validate(issue_map)
         for person in self.stakeholders:
             person.utility.validate(self.issues)
-            if not set(person.constraint_ids) <= constraint_ids:
-                raise ValueError(f"Unknown constraint on {person.id}")
         self.graph.validate()
 
     def offer(self, values: Mapping[str, str]) -> Offer:
@@ -177,7 +174,7 @@ class Scenario:
 
     def violations(self, offer: Offer) -> tuple[str, ...]:
         values = offer.as_dict(self.issues)
-        return tuple(rule.id for rule in self.constraints if not rule.holds(values))
+        return tuple(rule.id for rule in self.system_constraints if not rule.holds(values))
 
     def feasible_offers(self) -> tuple[Offer, ...]:
         return tuple(
@@ -193,6 +190,12 @@ def load_scenario(path: str | Path) -> Scenario:
     """Load a fully declarative JSON scenario; reject malformed configurations."""
 
     data: dict[str, Any] = json.loads(Path(path).read_text(encoding="utf-8"))
+    if "constraints" in data:
+        raise ValueError("Use system_constraints for rules that apply to every offer")
+    if any("constraint_ids" in item for item in data["stakeholders"]):
+        raise ValueError(
+            "Stakeholder constraint_ids are unsupported; define global rules in system_constraints"
+        )
     issues = tuple(Issue(item["name"], tuple(item["options"])) for item in data["issues"])
     people = tuple(
         Stakeholder(
@@ -204,18 +207,17 @@ def load_scenario(path: str | Path) -> Scenario:
                 option_values=item["utility"]["option_values"],
                 reservation=item["utility"]["reservation"],
             ),
-            constraint_ids=tuple(item.get("constraint_ids", [])),
         )
         for item in data["stakeholders"]
     )
-    constraints = tuple(
+    system_constraints = tuple(
         Constraint(
             id=item["id"], kind=item["kind"], issue=item["issue"],
             value=item["value"], required_issue=item.get("required_issue"),
             required_values=tuple(item.get("required_values", [])),
             rationale=item.get("rationale", ""),
         )
-        for item in data.get("constraints", [])
+        for item in data["system_constraints"]
     )
     graph_data = data.get("knowledge_graph", {})
     graph = KnowledgeGraph(
@@ -223,7 +225,7 @@ def load_scenario(path: str | Path) -> Scenario:
         edges=tuple(GraphEdge(**item) for item in graph_data.get("edges", [])),
     )
     return Scenario(
-        id=data["id"], issues=issues, stakeholders=people, constraints=constraints,
+        id=data["id"], issues=issues, stakeholders=people, system_constraints=system_constraints,
         graph=graph, turn_order=tuple(data["turn_order"]),
         max_turns=data.get("max_turns", 30),
         offer_objective=data.get("offer_objective", "proposer_surplus_times_acceptance"),

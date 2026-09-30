@@ -6,6 +6,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from negotiation.domain import load_scenario
+from negotiation.public import PublicScenario
 
 
 CONFIG = Path(__file__).resolve().parents[1] / "configs" / "toxic_waste.json"
@@ -27,7 +28,33 @@ class DomainTests(unittest.TestCase):
         values = {issue.name: issue.options[0] for issue in self.scenario.issues}
         offer = self.scenario.offer(values)
         self.assertEqual(set(self.scenario.violations(offer)), {"synthetic_specialist_only", "synthetic_documentation_required"})
+        public = PublicScenario.from_scenario(self.scenario)
+        self.assertEqual(public.system_constraints, self.scenario.system_constraints)
+        self.assertEqual(public.violations(offer), self.scenario.violations(offer))
         self.assertEqual(self.scenario.graph.outgoing("bob")[0].relation, "REPRESENTS")
+
+    def test_ambiguous_constraint_fields_are_rejected(self):
+        base = json.loads(CONFIG.read_text(encoding="utf-8"))
+        path = Path(__file__).resolve().parents[1] / "work" / "invalid_scenario.json"
+        path.parent.mkdir(exist_ok=True)
+        try:
+            for field in ("constraints", "constraint_ids"):
+                with self.subTest(field=field):
+                    data = json.loads(json.dumps(base))
+                    if field == "constraints":
+                        data["constraints"] = data.pop("system_constraints")
+                    else:
+                        data["stakeholders"][0]["constraint_ids"] = ["synthetic_specialist_only"]
+                    path.write_text(json.dumps(data), encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, field):
+                        load_scenario(path)
+            data = json.loads(json.dumps(base))
+            del data["system_constraints"]
+            path.write_text(json.dumps(data), encoding="utf-8")
+            with self.assertRaises(KeyError):
+                load_scenario(path)
+        finally:
+            path.unlink(missing_ok=True)
 
     def test_configuration_rejects_invalid_weights(self):
         data = json.loads(CONFIG.read_text(encoding="utf-8"))

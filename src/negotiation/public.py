@@ -18,7 +18,7 @@ from .domain import Constraint, Issue, KnowledgeGraph, Offer, Scenario
 class PublicScenario:
     id: str
     issues: tuple[Issue, ...]
-    constraints: tuple[Constraint, ...]
+    system_constraints: tuple[Constraint, ...]
     graph: KnowledgeGraph
     turn_order: tuple[str, ...]
     max_turns: int
@@ -27,7 +27,7 @@ class PublicScenario:
     @classmethod
     def from_scenario(cls, scenario: Scenario) -> "PublicScenario":
         return cls(
-            id=scenario.id, issues=scenario.issues, constraints=scenario.constraints,
+            id=scenario.id, issues=scenario.issues, system_constraints=scenario.system_constraints,
             graph=scenario.graph, turn_order=scenario.turn_order,
             max_turns=scenario.max_turns, offer_objective=scenario.offer_objective,
         )
@@ -42,7 +42,7 @@ class PublicScenario:
 
     def violations(self, offer: Offer) -> tuple[str, ...]:
         values = offer.as_dict(self.issues)
-        return tuple(rule.id for rule in self.constraints if not rule.holds(values))
+        return tuple(rule.id for rule in self.system_constraints if not rule.holds(values))
 
     def feasible_offers(self) -> tuple[Offer, ...]:
         return tuple(
